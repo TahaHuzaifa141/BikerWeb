@@ -119,13 +119,13 @@ const Tours = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="text-center mb-12 px-4"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
             <span className="text-orange-400">Featured</span>
             <span className="block bg-gradient-to-r from-orange-400 via-yellow-300 to-green-400 bg-clip-text text-transparent">Motorbike Tours & Adventures</span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto">
             Choose from our carefully curated selection of heavy bike tours across Pakistan's mountains, 
             each designed to offer unique riding experiences and unforgettable memories.
           </p>
@@ -137,13 +137,13 @@ const Tours = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="flex flex-wrap justify-center gap-4 mb-12"
+          className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-12 px-4"
         >
           {categories.map((category) => (
             <button
               key={category.id}
               onClick={() => setActiveCategory(category.id)}
-              className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
+              className={`px-4 sm:px-6 py-2 sm:py-3 rounded-full font-semibold transition-all duration-300 text-sm sm:text-base ${
                 activeCategory === category.id
                   ? 'bg-gradient-to-r from-orange-500 to-amber-600 text-white shadow-lg'
                   : 'bg-gray-800/50 text-gray-300 border border-orange-500/30 hover:bg-orange-600/20'
@@ -155,7 +155,7 @@ const Tours = () => {
         </motion.div>
 
         {/* Tours Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {filteredTours.map((tour, index) => (
             <motion.div
               key={tour.id}
@@ -174,33 +174,33 @@ const Tours = () => {
                 <img
                   src={tour.image}
                   alt={tour.title}
-                  className="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-48 sm:h-56 object-cover group-hover:scale-110 transition-transform duration-500"
                 />
-                <div className="absolute top-4 left-4 bg-gradient-to-r from-orange-500 to-amber-600 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg">
-                  <span className="text-sm font-bold text-white">{tour.difficulty}</span>
+                <div className="absolute top-3 sm:top-4 left-3 sm:left-4 bg-gradient-to-r from-orange-500 to-amber-600 backdrop-blur-sm px-3 sm:px-4 py-1 sm:py-2 rounded-full shadow-lg">
+                  <span className="text-xs sm:text-sm font-bold text-white">{tour.difficulty}</span>
                 </div>
-                <div className="absolute top-4 right-4 bg-gradient-to-r from-amber-500 to-orange-600 text-white px-4 py-2 rounded-full shadow-lg">
-                  <span className="text-sm font-bold">{tour.price}</span>
+                <div className="absolute top-3 sm:top-4 right-3 sm:right-4 bg-gradient-to-r from-amber-500 to-orange-600 text-white px-3 sm:px-4 py-1 sm:py-2 rounded-full shadow-lg">
+                  <span className="text-xs sm:text-sm font-bold">{tour.price}</span>
                 </div>
               </div>
 
               {/* Tour Content */}
-              <div className="p-6">
-                <h3 className="text-2xl font-bold text-orange-300 mb-3">{tour.title}</h3>
+              <div className="p-4 sm:p-6">
+                <h3 className="text-xl sm:text-2xl font-bold text-orange-300 mb-3">{tour.title}</h3>
                 
                 {/* Tour Details */}
                 <div className="space-y-3 mb-4">
                   <div className="flex items-center text-gray-300">
-                    <MapPin className="h-5 w-5 mr-3 text-orange-400" />
-                    <span className="text-sm">{tour.location}</span>
+                    <MapPin className="h-4 w-4 sm:h-5 sm:w-5 mr-3 text-orange-400 flex-shrink-0" />
+                    <span className="text-xs sm:text-sm">{tour.location}</span>
                   </div>
                   <div className="flex items-center text-gray-300">
-                    <Clock className="h-5 w-5 mr-3 text-green-400" />
-                    <span className="text-sm">{tour.duration}</span>
+                    <Clock className="h-4 w-4 sm:h-5 sm:w-5 mr-3 text-green-400 flex-shrink-0" />
+                    <span className="text-xs sm:text-sm">{tour.duration}</span>
                   </div>
                   <div className="flex items-center text-gray-300">
-                    <Users className="h-5 w-5 mr-3 text-yellow-400" />
-                    <span className="text-sm">{tour.groupSize}</span>
+                    <Users className="h-4 w-4 sm:h-5 sm:w-5 mr-3 text-yellow-400 flex-shrink-0" />
+                    <span className="text-xs sm:text-sm">{tour.groupSize}</span>
                   </div>
                 </div>
 
@@ -210,7 +210,7 @@ const Tours = () => {
                     {[...Array(5)].map((_, i) => (
                       <Star
                         key={i}
-                        className={`h-4 w-4 ${
+                        className={`h-3 w-3 sm:h-4 sm:w-4 ${
                           i < Math.floor(tour.rating)
                             ? 'text-yellow-400 fill-current'
                             : 'text-gray-500'
@@ -218,13 +218,13 @@ const Tours = () => {
                       />
                     ))}
                   </div>
-                  <span className="ml-2 text-sm text-gray-300 font-semibold">
+                  <span className="ml-2 text-xs sm:text-sm text-gray-300 font-semibold">
                     {tour.rating} ({tour.reviews} reviews)
                   </span>
                 </div>
 
                 {/* Description */}
-                <p className="text-gray-300 mb-4 text-sm leading-relaxed">{tour.description}</p>
+                <p className="text-gray-300 mb-4 text-xs sm:text-sm leading-relaxed">{tour.description}</p>
 
                 {/* Highlights */}
                 <div className="mb-6">
@@ -232,7 +232,7 @@ const Tours = () => {
                     {tour.highlights.slice(0, 2).map((highlight, idx) => (
                       <span
                         key={idx}
-                        className="bg-orange-500/20 text-orange-300 px-3 py-1 rounded-lg text-sm font-semibold border border-orange-500/30"
+                        className="bg-orange-500/20 text-orange-300 px-2 sm:px-3 py-1 rounded-lg text-xs font-semibold border border-orange-500/30"
                       >
                         📍 {highlight}
                       </span>
@@ -245,7 +245,7 @@ const Tours = () => {
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="w-full py-3 rounded-xl font-bold text-base shadow-xl transition-all duration-300 text-white"
+                    className="w-full py-3 rounded-xl font-bold text-sm sm:text-base shadow-xl transition-all duration-300 text-white"
                     style={{background: 'linear-gradient(90deg, #F59E42 0%, #FB923C 50%, #FDBA74 100%)'}}
                   >
                     <span className="inline-flex items-center justify-center gap-2">
@@ -256,7 +256,7 @@ const Tours = () => {
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="w-full py-3 rounded-xl font-bold text-base shadow-xl transition-all duration-300 text-white"
+                    className="w-full py-3 rounded-xl font-bold text-sm sm:text-base shadow-xl transition-all duration-300 text-white"
                     style={{background: 'linear-gradient(90deg, #F59E42 0%, #FB923C 50%, #FDBA74 100%)'}}
                   >
                     <span className="inline-flex items-center justify-center gap-2">

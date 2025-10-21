@@ -91,18 +91,18 @@ const Contact = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-16 px-4"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-yellow-300 mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-yellow-300 mb-6">
             Ready to <span className="bg-gradient-to-r from-orange-400 via-red-500 to-yellow-400 bg-clip-text text-transparent">Ride Pakistan?</span>
           </h2>
-          <p className="text-xl text-yellow-100 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-yellow-100 max-w-3xl mx-auto">
             🏍️ Book your ultimate heavy bike mountain adventure today! 
             Contact us for custom tours, group bookings, and special packages across Northern Pakistan.
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 mb-20">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 mb-16 lg:mb-20">
           {/* Contact Information */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -110,8 +110,8 @@ const Contact = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-2xl font-bold text-white mb-8">📞 Get In Touch</h3>
-            <div className="space-y-6 mb-8">
+            <h3 className="text-xl sm:text-2xl font-bold text-white mb-6 sm:mb-8">📞 Get In Touch</h3>
+            <div className="space-y-4 sm:space-y-6 mb-6 sm:mb-8">
               {contactInfo.map((info, index) => (
                 <motion.div
                   key={index}
@@ -119,15 +119,15 @@ const Contact = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="flex items-start space-x-4"
+                  className="flex items-start space-x-3 sm:space-x-4"
                 >
-                  <div className="bg-gradient-to-br from-orange-500 to-red-600 p-3 rounded-lg shadow-lg">
-                    <info.icon className="h-6 w-6 text-white" />
+                  <div className="bg-gradient-to-br from-orange-500 to-red-600 p-2 sm:p-3 rounded-lg shadow-lg flex-shrink-0">
+                    <info.icon className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-white mb-1">{info.title}</h4>
-                    <p className="text-gray-200 font-medium">{info.details}</p>
-                    <p className="text-gray-400 text-sm">{info.subDetails}</p>
+                    <h4 className="font-semibold text-white mb-1 text-sm sm:text-base">{info.title}</h4>
+                    <p className="text-gray-200 font-medium text-sm sm:text-base">{info.details}</p>
+                    <p className="text-gray-400 text-xs sm:text-sm">{info.subDetails}</p>
                   </div>
                 </motion.div>
               ))}
@@ -155,11 +155,9 @@ const Contact = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="bg-gradient-to-br from-slate-800 to-slate-700 rounded-2xl p-8 border-2 border-orange-500/30 shadow-2xl"
-          >
-            <h3 className="text-2xl font-bold text-white mb-6">✉️ Book Your Tour</h3>
-            
-            {isSubmitted && (
+          className="bg-gradient-to-br from-slate-800 to-slate-700 rounded-2xl p-6 sm:p-8 border-2 border-orange-500/30 shadow-2xl"
+        >
+          <h3 className="text-xl sm:text-2xl font-bold text-white mb-6">✉️ Book Your Tour</h3>            {isSubmitted && (
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -173,8 +171,8 @@ const Contact = () => {
               </motion.div>
             )}
 
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-4">
+            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+              <div className="grid sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-medium text-white mb-2">
                     Full Name *
@@ -205,7 +203,7 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div className="grid md:grid-cols-2 gap-4">
+              <div className="grid sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-medium text-white mb-2">
                     Phone Number
@@ -256,13 +254,14 @@ const Contact = () => {
                 type="submit"
                 whileHover={{ scale: 1.05, boxShadow: "0 20px 60px rgba(251, 146, 60, 0.6)" }}
                 whileTap={{ scale: 0.98 }}
-                className="w-full py-5 rounded-2xl font-black text-xl shadow-2xl transition-all duration-300 text-white border-none focus:outline-none focus:ring-4 focus:ring-orange-500/50 relative overflow-hidden group"
+                className="w-full py-4 sm:py-5 rounded-2xl font-black text-lg sm:text-xl shadow-2xl transition-all duration-300 text-white border-none focus:outline-none focus:ring-4 focus:ring-orange-500/50 relative overflow-hidden group"
                 style={{background: 'linear-gradient(135deg, #F97316 0%, #DC2626 50%, #EA580C 100%)'}}
               >
-                <span className="relative inline-flex items-center justify-center gap-3">
-                  <span className="text-2xl">🏍️</span> 
-                  Book Your Adventure Now
-                  <Send className="h-6 w-6 group-hover:translate-x-2 transition-transform" />
+                <span className="relative inline-flex items-center justify-center gap-2 sm:gap-3">
+                  <span className="text-xl sm:text-2xl">🏍️</span> 
+                  <span className="hidden sm:inline">Book Your Adventure Now</span>
+                  <span className="sm:hidden">Book Now</span>
+                  <Send className="h-5 w-5 sm:h-6 sm:w-6 group-hover:translate-x-2 transition-transform" />
                 </span>
               </motion.button>
             </form>
@@ -276,11 +275,11 @@ const Contact = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h3 className="text-3xl font-bold text-white text-center mb-12">
+          <h3 className="text-2xl sm:text-3xl font-bold text-white text-center mb-8 sm:mb-12">
             ❓ Frequently Asked Questions
           </h3>
           
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid sm:grid-cols-2 gap-6 sm:gap-8">
             {faqItems.map((faq, index) => (
               <motion.div
                 key={index}
@@ -289,10 +288,10 @@ const Contact = () => {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 whileHover={{ scale: 1.02 }}
-                className="bg-gradient-to-br from-slate-800 to-slate-700 border-2 border-orange-500/30 rounded-lg p-6 shadow-xl"
+                className="bg-gradient-to-br from-slate-800 to-slate-700 border-2 border-orange-500/30 rounded-lg p-4 sm:p-6 shadow-xl"
               >
-                <h4 className="font-bold text-white mb-3 text-lg">{faq.q}</h4>
-                <p className="text-gray-300 leading-relaxed">{faq.a}</p>
+                <h4 className="font-bold text-white mb-2 sm:mb-3 text-base sm:text-lg">{faq.q}</h4>
+                <p className="text-gray-300 leading-relaxed text-sm sm:text-base">{faq.a}</p>
               </motion.div>
             ))}
           </div>

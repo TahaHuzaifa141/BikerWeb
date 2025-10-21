@@ -69,20 +69,20 @@ const Testimonials = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-16 px-4"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
             What Our Riders
             <span className="block bg-gradient-to-r from-orange-400 via-yellow-300 to-green-400 bg-clip-text text-transparent">Are Saying</span>
           </h2>
-          <p className="text-xl text-gray-200 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-gray-200 max-w-3xl mx-auto">
             Don't just take our word for it. Hear from the adventurers who have experienced 
             the thrill of our mountain biking tours firsthand.
           </p>
         </motion.div>
 
         {/* Testimonials Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-12">
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={testimonial.id}
@@ -90,11 +90,11 @@ const Testimonials = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-gradient-to-br from-slate-800 to-slate-700 rounded-xl shadow-2xl p-6 border-2 border-orange-500/30 hover:border-orange-500 transition-all duration-300 hover:scale-105"
+              className="bg-gradient-to-br from-slate-800 to-slate-700 rounded-xl shadow-2xl p-4 sm:p-6 border-2 border-orange-500/30 hover:border-orange-500 transition-all duration-300 hover:scale-105"
             >
               {/* Quote Icon */}
-              <div className="bg-gradient-to-br from-orange-500 to-red-600 w-12 h-12 rounded-lg flex items-center justify-center mb-4 shadow-lg">
-                <Quote className="h-6 w-6 text-white" />
+              <div className="bg-gradient-to-br from-orange-500 to-red-600 w-10 h-10 sm:w-12 sm:h-12 rounded-lg flex items-center justify-center mb-4 shadow-lg">
+                <Quote className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
               </div>
 
               {/* Rating */}
@@ -102,7 +102,7 @@ const Testimonials = () => {
                 {[...Array(5)].map((_, i) => (
                   <Star
                     key={i}
-                    className={`h-5 w-5 ${
+                    className={`h-4 w-4 sm:h-5 sm:w-5 ${
                       i < testimonial.rating
                         ? 'text-yellow-400 fill-current'
                         : 'text-gray-600'
@@ -112,12 +112,12 @@ const Testimonials = () => {
               </div>
 
               {/* Testimonial Text */}
-              <p className="text-gray-200 mb-6 leading-relaxed">
+              <p className="text-gray-200 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
                 "{testimonial.text}"
               </p>
 
               {/* Tour Name */}
-              <div className="bg-gradient-to-r from-orange-500 to-red-600 text-white px-3 py-1 rounded-full text-sm inline-block mb-4 font-semibold shadow-lg">
+              <div className="bg-gradient-to-r from-orange-500 to-red-600 text-white px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm inline-block mb-4 font-semibold shadow-lg">
                 {testimonial.tour}
               </div>
 
@@ -126,11 +126,11 @@ const Testimonials = () => {
                 <img
                   src={testimonial.image}
                   alt={testimonial.name}
-                  className="w-12 h-12 rounded-full object-cover mr-4 border-2 border-orange-500"
+                  className="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover mr-3 sm:mr-4 border-2 border-orange-500"
                 />
                 <div>
-                  <div className="font-semibold text-white">{testimonial.name}</div>
-                  <div className="text-gray-400 text-sm">{testimonial.location}</div>
+                  <div className="font-semibold text-white text-sm sm:text-base">{testimonial.name}</div>
+                  <div className="text-gray-400 text-xs sm:text-sm">{testimonial.location}</div>
                 </div>
               </div>
             </motion.div>
@@ -141,11 +141,13 @@ const Testimonials = () => {
           <motion.button
             whileHover={{ scale: 1.12, rotate: 2 }}
             whileTap={{ scale: 0.96 }}
-            className="px-8 py-4 rounded-2xl font-extrabold text-lg shadow-2xl transition-all duration-300 text-white border-none focus:outline-none focus:ring-4 focus:ring-orange-400/40"
+            className="px-6 sm:px-8 py-3 sm:py-4 rounded-2xl font-extrabold text-base sm:text-lg shadow-2xl transition-all duration-300 text-white border-none focus:outline-none focus:ring-4 focus:ring-orange-400/40"
             style={{background: 'linear-gradient(90deg, #F59E0B 0%, #F97316 60%, #FB923C 100%)'}}
           >
             <span className="inline-flex items-center gap-2">
-              <span className="animate-pulse">⭐</span> Read More Reviews
+              <span className="animate-pulse">⭐</span> 
+              <span className="hidden sm:inline">Read More Reviews</span>
+              <span className="sm:hidden">More Reviews</span>
             </span>
           </motion.button>
         </div>
@@ -156,20 +158,20 @@ const Testimonials = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="bg-gradient-to-r from-primary-600 to-accent-500 rounded-2xl p-8 md:p-12 text-white"
+          className="bg-gradient-to-r from-primary-600 to-accent-500 rounded-2xl p-6 sm:p-8 md:p-12 text-white"
         >
-          <div className="grid md:grid-cols-3 gap-8 text-center">
+          <div className="grid sm:grid-cols-3 gap-6 sm:gap-8 text-center">
             <div>
-              <div className="text-4xl md:text-5xl font-bold mb-2">4.9/5</div>
-              <div className="text-primary-100">Average Rating</div>
+              <div className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2">4.9/5</div>
+              <div className="text-primary-100 text-sm sm:text-base">Average Rating</div>
             </div>
             <div>
-              <div className="text-4xl md:text-5xl font-bold mb-2">1000+</div>
-              <div className="text-primary-100">Happy Customers</div>
+              <div className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2">1000+</div>
+              <div className="text-primary-100 text-sm sm:text-base">Happy Customers</div>
             </div>
             <div>
-              <div className="text-4xl md:text-5xl font-bold mb-2">98%</div>
-              <div className="text-primary-100">Would Recommend</div>
+              <div className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2">98%</div>
+              <div className="text-primary-100 text-sm sm:text-base">Would Recommend</div>
             </div>
           </div>
         </motion.div>

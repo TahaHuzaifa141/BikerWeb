@@ -96,7 +96,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-5xl md:text-7xl lg:text-8xl font-black mb-6 leading-tight"
+          className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-black mb-6 leading-tight"
         >
           <span className="text-amber-300 drop-shadow-2xl">Conquer Pakistan's</span>
           <motion.span
@@ -114,7 +114,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.7 }}
-          className="text-xl md:text-2xl text-gray-200 font-medium mb-8 max-w-4xl mx-auto leading-relaxed drop-shadow-lg"
+          className="text-lg sm:text-xl md:text-2xl text-gray-200 font-medium mb-8 max-w-4xl mx-auto leading-relaxed drop-shadow-lg px-4"
         >
           🏍️ Experience the ultimate heavy bike adventure through Pakistan's breathtaking Northern Areas. 
           From Hunza to Skardu, K2 Base Camp to Fairy Meadows - Your dream ride awaits!
@@ -148,20 +148,21 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.1 }}
-          className="flex flex-col sm:flex-row gap-6 justify-center items-center"
+          className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center px-4"
         >
           <motion.a
             href="#tours"
             whileHover={{ scale: 1.08, boxShadow: "0 25px 60px rgba(251, 146, 60, 0.6)" }}
             whileTap={{ scale: 0.95 }}
-            className="group relative px-12 py-6 rounded-2xl font-black text-xl text-yellow-100 overflow-hidden shadow-2xl"
+            className="group relative px-8 sm:px-12 py-4 sm:py-6 rounded-2xl font-black text-lg sm:text-xl text-yellow-100 overflow-hidden shadow-2xl w-full sm:w-auto text-center"
           >
             <div className="absolute inset-0 bg-gradient-to-r from-orange-600 via-amber-600 to-orange-500 transition-all duration-300"></div>
             <div className="absolute inset-0 bg-gradient-to-r from-orange-500 via-amber-500 to-orange-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            <span className="relative flex items-center gap-3">
-              <span className="text-2xl">🏍️</span>
-              Book Your Adventure
-              <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform duration-300" />
+            <span className="relative flex items-center justify-center gap-3">
+              <span className="text-xl sm:text-2xl">🏍️</span>
+              <span className="hidden sm:inline">Book Your Adventure</span>
+              <span className="sm:hidden">Book Adventure</span>
+              <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6 group-hover:translate-x-2 transition-transform duration-300" />
             </span>
           </motion.a>
 
@@ -169,11 +170,12 @@ const Hero = () => {
             href="#tours"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="group px-10 py-5 rounded-2xl font-bold text-lg text-gray-200 border-2 border-orange-400/50 backdrop-blur-md hover:bg-orange-600/30 transition-all duration-300 shadow-xl"
+            className="group px-6 sm:px-10 py-4 sm:py-5 rounded-2xl font-bold text-base sm:text-lg text-gray-200 border-2 border-orange-400/50 backdrop-blur-md hover:bg-orange-600/30 transition-all duration-300 shadow-xl w-full sm:w-auto text-center"
           >
-            <span className="flex items-center gap-3">
-              <Play className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
-              Watch Tour Videos
+            <span className="flex items-center justify-center gap-3">
+              <Play className="w-4 h-4 sm:w-5 sm:h-5 group-hover:scale-110 transition-transform duration-300" />
+              <span className="hidden sm:inline">Watch Tour Videos</span>
+              <span className="sm:hidden">Watch Videos</span>
             </span>
           </motion.a>
         </motion.div>
@@ -183,7 +185,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.3 }}
-          className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto"
+          className="mt-16 sm:mt-20 grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 max-w-4xl mx-auto px-4"
         >
           {[
             { icon: '🏍️', number: "1000+", label: "Successful Tours", color: "from-orange-400 to-amber-400" },
@@ -194,13 +196,13 @@ const Hero = () => {
             <motion.div
               key={index}
               whileHover={{ scale: 1.1, y: -5 }}
-              className="text-center bg-gray-800/50 backdrop-blur-md border border-orange-500/30 rounded-2xl p-6 shadow-xl"
+              className="text-center bg-gray-800/50 backdrop-blur-md border border-orange-500/30 rounded-2xl p-4 sm:p-6 shadow-xl"
             >
-              <div className="text-4xl mb-2">{stat.icon}</div>
-              <div className={`text-3xl md:text-4xl font-black bg-gradient-to-r ${stat.color} bg-clip-text text-transparent mb-1`}>
+              <div className="text-2xl sm:text-4xl mb-2">{stat.icon}</div>
+              <div className={`text-2xl sm:text-3xl md:text-4xl font-black bg-gradient-to-r ${stat.color} bg-clip-text text-transparent mb-1`}>
                 {stat.number}
               </div>
-              <div className="text-sm md:text-base text-gray-200 font-semibold">
+              <div className="text-xs sm:text-sm md:text-base text-gray-200 font-semibold">
                 {stat.label}
               </div>
             </motion.div>
@@ -212,15 +214,15 @@ const Hero = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.5 }}
-          className="mt-16"
+          className="mt-12 sm:mt-16 px-4"
         >
           <p className="text-orange-300 text-sm font-semibold mb-4">🗺️ POPULAR DESTINATIONS</p>
-          <div className="flex flex-wrap gap-3 justify-center">
+          <div className="flex flex-wrap gap-2 sm:gap-3 justify-center">
             {['Hunza Valley', 'Skardu', 'Naran Kaghan', 'Fairy Meadows', 'K2 Base Camp', 'Gilgit', 'Swat Valley', 'Naltar Valley'].map((dest, index) => (
               <motion.span
                 key={index}
                 whileHover={{ scale: 1.05, backgroundColor: 'rgba(251, 146, 60, 0.3)' }}
-                className="px-4 py-2 bg-orange-600/20 backdrop-blur-sm border border-orange-400/40 rounded-lg text-gray-200 text-sm font-medium cursor-pointer transition-all"
+                className="px-3 sm:px-4 py-1 sm:py-2 bg-orange-600/20 backdrop-blur-sm border border-orange-400/40 rounded-lg text-gray-200 text-xs sm:text-sm font-medium cursor-pointer transition-all"
               >
                 📍 {dest}
               </motion.span>
